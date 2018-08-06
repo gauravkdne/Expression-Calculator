@@ -1,0 +1,32 @@
+server:
+  port: 9999
+spring:
+  output:
+    ansi:
+      enabled: always
+  data:
+    rest:
+    
+      base-path: /mkt
+  datasource:
+    driverClassName: org.h2.Driver
+    url: jdbc:h2:mem:marketplace;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    platform: h2
+    username: gk
+    password: null
+  jpa:
+    properties:
+      dialect: org.hibernate.dialect.H2Dialect
+      show_sql: true
+      use_sql_comments: true
+      format_sql: true
+      ddl-auto: update
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+      settings:
+        trace: false
+        web-allow-others: false
+  jackson:
+    time-zone: UTC
